@@ -123,7 +123,10 @@ export default {
               job = jobObj[jobId];
             }
 
-            const jobConfig = this.configjs.jobs[jobId];
+            let jobConfig = this.configjs.jobs[jobId];
+            if (jobConfig === undefined) {
+              jobConfig = {};
+            }
 
             // For "only" skip everything else
             let branchesFilter = get(job, 'filters.branches.only');
