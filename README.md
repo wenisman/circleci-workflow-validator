@@ -1,8 +1,9 @@
 # CircleCI 2 visualisation
 
-## [circle.mikul.as](https://circle.mikul.as)
+build the docker container 
 
-For anybody who is struggling managing a complex CircleCI 2 config. And anybody who needs to migrate to CircleCI 2 _this week_!
-See Circle CI workflows and preview them in different branches.
+```
+docker build -t circleci-visualiser .
 
-[![CircleCI 2 workflow validation](./public/screenshot.png)](https://circle.mikul.as)
+docker run -p 8080:8080 circleci-visualiser -d
+```
